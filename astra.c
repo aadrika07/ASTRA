@@ -1,4 +1,4 @@
-[10:43 am, 16/11/2023] Raj: #include <stdio.h>
+#include <stdio.h>
 
 void determineZodiacSign(int day, int month) {
     if ((month == 3 && day >= 22) || (month == 4 && day <= 20)) {
