@@ -1,0 +1,1 @@
+This project consists of a code that finds out your zodiac sign based on your date of birth.
