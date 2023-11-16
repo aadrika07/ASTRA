@@ -32,47 +32,37 @@ void determineZodiacSign(int day, int month) {
 
 int main() {
     int day, month, choice;
+    char continueChoice;
 
-    printf("1. Determine Zodiac Sign\n");
-    printf("2. Exit\n");
+    do {
+        printf("1. Determine Zodiac Sign\n");
+        printf("2. Exit\n");
 
-    printf("Enter your choice (1 or 2): ");
-    scanf("%d", &choice);
+        printf("Enter your choice (1 or 2): ");
+        scanf("%d", &choice);
 
-    switch (choice) {
-        case 1:
-            printf("Enter your date of birth (DD MM): ");
-            scanf("%d %d", &day, &month);
-            determineZodiacSign(day, month);
-            break;
-        case 2:
-            printf("Exiting the program.\n");
-            break;
-        default:
-            printf("Invalid choice. Exiting the program.\n");
-            break;
-    }
+        switch (choice) {
+            case 1:
+                printf("Enter your date of birth (DD MM): ");
+                scanf("%d %d", &day, &month);
+                determineZodiacSign(day, month);
+                break;
+            case 2:
+                printf("Exiting the program.\n");
+                break;
+            default:
+                printf("Invalid choice. Exiting the program.\n");
+                break;
+        }
 
-    return 0;
-}
-[10:51 am, 16/11/2023] Raj: #include <stdio.h>
-#include <string.h>
+        if (choice == 2) {
+            break;  // Exit the loop if the user chose to exit
+        }
 
-void findAndReplace(char *str, const char *find, const char *replace) {
-    while ((str = strstr(str, find)) != NULL) {
-        memcpy(str, replace, strlen(replace));
-        str += strlen(replace);
-    }
-}
+        printf("Do you want to continue? (y/n): ");
+        scanf(" %c", &continueChoice);  // Note the space before %c to consume the newline character
 
-int main() {
-    char sentence[100] = "The quick brown fox jumped";
-    const char wordToFind[] = "fox";
-    const char replacement[] = "horse";
-
-    findAndReplace(sentence, wordToFind, replacement);
-
-    printf("Modified sentence: %s\n", sentence);
+    } while (continueChoice == 'y' || continueChoice == 'Y');
 
     return 0;
 }
