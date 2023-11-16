@@ -1,3 +1,4 @@
+// this code is for finding out zodiac signs
 #include <stdio.h>
 
 void determineZodiacSign(int day, int month) {
